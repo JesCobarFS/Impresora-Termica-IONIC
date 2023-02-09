@@ -7,14 +7,31 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-button (click)="activarBluetooht()" expand="block" >
+    Buscar
+  </ion-button>
+<ion-card>
+ 
+</ion-card>
+  <ion-card *ngFor="let dis of dispositivios">
+    <ion-card-header>
+      <ion-card-subtitle>{{dis.address}}</ion-card-subtitle>
+      <ion-card-title>{{dis.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button  expand="block"  color="primary" (click)="conectarDispositivo(dis.address)">
+        Conectar
+      </ion-button>
+      <ion-button  expand="block" (click)="imprimir()">
+        Imprimir
+      </ion-button>
+    </ion-card-content>
+   
+  </ion-card>
+
+
+
+
+
 </ion-content>
